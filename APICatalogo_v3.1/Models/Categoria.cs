@@ -12,5 +12,7 @@ namespace APICatalogo_v3._1.Models
         public string Nome { get; set; }
         public string ImagemUrl { get; set; }
 
+        public ICollection<Produto> Produtos { get; set; }
+
     }
 }

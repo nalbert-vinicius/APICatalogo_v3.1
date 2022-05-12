@@ -1,11 +1,14 @@
+using APICatalogo_v3._1.Context;
 using Microsoft.AspNetCore.Builder;
 using Microsoft.AspNetCore.Hosting;
 using Microsoft.AspNetCore.HttpsPolicy;
 using Microsoft.AspNetCore.Mvc;
+using Microsoft.EntityFrameworkCore;
 using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.DependencyInjection;
 using Microsoft.Extensions.Hosting;
 using Microsoft.Extensions.Logging;
+using Pomelo.EntityFrameworkCore.MySql.Storage.Internal;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -25,6 +28,11 @@ namespace APICatalogo_v3._1
         // This method gets called by the runtime. Use this method to add services to the container.
         public void ConfigureServices(IServiceCollection services)
         {
+            string ConnectionDB = Configuration.GetConnectionString("DefaultConnection");
+
+            services.AddDbContext<AppDbContext>(opt =>
+                opt.UseMySql(ConnectionDB, ServerVersion.AutoDetect(ConnectionDB)));
+
             services.AddControllers();
         }
 
