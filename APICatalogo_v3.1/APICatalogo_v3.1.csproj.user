@@ -5,5 +5,7 @@
   </PropertyGroup>
   <PropertyGroup>
     <ActiveDebugProfile>APICatalogo_v3._1</ActiveDebugProfile>
+    <Controller_SelectedScaffolderID>ApiControllerEmptyScaffolder</Controller_SelectedScaffolderID>
+    <Controller_SelectedScaffolderCategoryPath>root/Common/Api</Controller_SelectedScaffolderCategoryPath>
   </PropertyGroup>
 </Project>
